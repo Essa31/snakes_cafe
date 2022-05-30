@@ -39,9 +39,31 @@ order = input("""
 ***********************************
 > """
     )
+menu={
+"Wings":0,
+"Cookies":0,
+"Spring Rolls":0,
+"Salmon":0,
+"Steak":0,
+"Meat Tornado":0,
+"A Literal Garden":0,
+"Ice Cream":0,
+"Cake":0,
+"Pie":0,
+"Coffee":0,
+"Tea":0,
+"Unicorn Tears":0
+}
+reslt=[]
+
+
 while order!="quit":
-    n =int(input("How many pieces do you want to eat ? "))
-    print(f'** {n} order of {order} have been added to your meal **')
+    menu[order]=menu[order]+1
+
+    if order not in reslt:
+       reslt.append(order)
+    for i in reslt:
+        print(f'** {menu[i]} order of {i} have been added to your meal **')
     order = input("""
 ***********************************
 ** What would you like to order? **
