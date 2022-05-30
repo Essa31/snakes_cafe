@@ -40,7 +40,7 @@ order = input("""
 > """
     )
 while order!="quit":
-    n =int(input("number of order ? "))
+    n =int(input("How many pieces do you want to eat ? "))
     print(f'** {n} order of {order} have been added to your meal **')
     order = input("""
 ***********************************
