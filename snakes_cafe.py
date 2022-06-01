@@ -39,6 +39,8 @@ order = input("""
 ***********************************
 > """
     )
+order=order.capitalize()
+
 menu={
 "Wings":0,
 "Cookies":0,
@@ -58,13 +60,24 @@ reslt=[]
 
 
 while order!="quit":
-    menu[order]=menu[order]+1
+    if order not in menu:
 
-    if order not in reslt:
-       reslt.append(order)
-    for i in reslt:
-        print(f'** {menu[i]} order of {i} have been added to your meal **')
-    order = input("""
+        print ("is not in the menu ")
+        order = input("""
+***********************************
+** What would you like to order? **
+***********************************
+> """)
+        order = order.capitalize()
+    else:
+
+            menu[order]=menu[order]+1
+
+            if order not in reslt:
+               reslt.append(order)
+            for i in reslt:
+                print(f'** {menu[i]} order of {i} have been added to your meal **')
+            order = input("""
 ***********************************
 ** What would you like to order? **
 ***********************************
